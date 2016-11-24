@@ -102,10 +102,10 @@ docs to see the alternative method for running a server.
 Invalid Import Name
 ```````````````````
 
-The ``-a`` argument to :command:`flask` is the name of the module to
-import.  In case that module is incorrectly named you will get an import
-error upon start (or if debug is enabled when you navigate to the
-application).  It will tell you what it tried to import and why it failed.
+The ``FLASK_APP`` environment variable is the name of the module to import at 
+:command:`flask run`. In case that module is incorrectly named you will get an 
+import error upon start (or if debug is enabled when you navigate to the 
+application). It will tell you what it tried to import and why it failed.
 
 The most common reason is a typo or because you did not actually create an
 ``app`` object.
@@ -817,6 +817,9 @@ values do not persist across requests, cookies are indeed enabled, and you are
 not getting a clear error message, check the size of the cookie in your page
 responses compared to the size supported by web browsers.
 
+Besides the default client-side based sessions, if you want to handle
+sessions on the server-side instead, there are several
+Flask extensions that support this.
 
 Message Flashing
 ----------------
